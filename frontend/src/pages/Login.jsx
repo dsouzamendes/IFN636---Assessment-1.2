@@ -22,8 +22,14 @@ const Login = () => {
     setError(null);
     try {
       const response = await axiosInstance.post('/api/auth/login', formData);
-      // Auth controller returns { user: { _id, name, email, role, ... }, token }
-      const { user, token } = response.data;
+      // Support both nested { user: {...}, token } and flat { id, name, email, token }
+      const token = response.data.token;
+      const user = response.data.user || {
+        id: response.data.id,
+        name: response.data.name,
+        email: response.data.email,
+        role: response.data.role,
+      };
       localStorage.setItem('authToken', token);
       localStorage.setItem('user', JSON.stringify(user));
       login({ ...user, token });
