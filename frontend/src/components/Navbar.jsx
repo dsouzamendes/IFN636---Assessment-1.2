@@ -42,12 +42,7 @@ const Navbar = () => {
                 >
                   My Entries
                 </Link>
-                <Link
-                  to="/profile"
-                  className="text-gray-700 hover:text-teal-600 font-medium transition-colors"
-                >
-                  Profile
-                </Link>
+                
                 {user?.role === 'admin' && (
                   <Link
                     to="/admin"
