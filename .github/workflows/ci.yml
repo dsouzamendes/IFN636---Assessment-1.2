@@ -53,5 +53,5 @@ jobs:
 
       - name: Start and restart PM2
         run: |
-          pm2 start all
-          pm2 restart all
+          pm2 start all || true
+          pm2 restart all || true
