@@ -40,16 +40,16 @@ jobs:
           yarn
           yarn run build
 
+      - name: Create .env file
+        run: |
+          cd backend
+          echo "${{ secrets.PROD }}" > .env    
+
       - name: Run backend tests
         run: |
           cd backend
           npm ci
           npm test
-
-      - name: Create .env file
-        run: |
-          cd backend
-          echo "${{ secrets.PROD }}" > .env
 
       - name: Start and restart PM2
         run: |
