@@ -3,18 +3,63 @@
 
 Assignment: **Software requirements analysis and design (**Full-Stack CRUD Application Development with DevOps Practices**)**
 
+Instance ID: i-04f4070b30ab93957 
+Instance Name: 1.2 Daniel Souza Mendes
 
 ---
 
-**Objective**
+# Personal Diary App
 
-For this assessment, you have already been assigned a project. Your task is to develop a system that implements CRUD (Create, Read, Update, Delete) operations based on the selected project. The system should include both a user panel and an admin panel. Depending on the nature of your chosen project, you may decide how many CRUD operations are required to support the functionality of the system. You have been provided with a starter project that includes user authentication using Node.js, React.js, and MongoDB, your should extend this application based on your assigned project requirements. Ensure that the implemented features are appropriate and meaningful for your selected project. Your project should include the following:
-In this assignment you will complete the following tasks:
+A full-stack Personal Diary application built with the MERN stack (MongoDB, Express, React, Node.js).
 
-* **Basic Version Control using GitHub**
-* **Development, CI/CD Integration for Automated Deployment**
-* **Project report**
+---
 
+## Project Setup Instructions
+
+1. Start the EC2 instance from the AWS Console if it is stopped
+2. SSH into the instance:
+   ```
+   Host: 3.106.200.137
+   User: ubuntu
+   Password: 123456
+   ```
+   ## IMPORTANT If instance was stopped, upon restart the public ip changes !
+3. Get the current public IP:
+   ```bash
+   curl ifconfig.me
+   ```
+   OR in EC2 AWS portal
+
+4. Update `frontend/src/axiosConfig.jsx` with the current public IP:
+   ```javascript
+   baseURL: 'http://YOUR_CURRENT_PUBLIC_IP',
+   ```
+5. Commit and push to `main`:
+   ```bash
+   git add frontend/src/axiosConfig.jsx
+   git commit -m "update EC2 IP"
+   git push origin main
+   ```
+6. The CI/CD pipeline will automatically rebuild and redeploy the app
+7. Access the app at `http://YOUR_CURRENT_PUBLIC_IP`
+
+---
+
+## Current Public URL
+
+**http://3.106.200.137**
+
+---
+
+## Admin Access
+
+| Field | Value |
+|-------|-------|
+| Email | admin@email.com |
+| Password | 123456 |
+
+Feel free to create new entries, edit entries, delete entries and in the admin dashboard delete existing users.
+You can also create a general user account and navigate.
  
 ---
 
